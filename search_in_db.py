@@ -8,12 +8,7 @@ def search_for_film(keyword, films_data):
     return films_found
 
 if __name__ == '__main__':
-    path = input('Enter path to DataBase:')
-
-    if path == '':
-        path = 'MyFilmDB.json'
-
-    films_data = load_data(path)
+    films_data = load_data()
 
     if not films_data:
         print('File not found, sorry...')
