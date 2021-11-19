@@ -41,11 +41,6 @@ def get_rating(my_film, films_data, num_to_recommend=8):
 
 
 if __name__ == '__main__':
-    path = input('Enter path to DataBase:')
-
-    if path == '':
-        path = 'MyFilmDB.json'
-
     films_data = load_data()
 
     if not films_data:
