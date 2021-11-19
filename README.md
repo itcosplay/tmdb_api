@@ -8,7 +8,7 @@
 С помощью этого скрипта можно проверить работоспособность вашего токена.  
 Если токен рабочий, напечатает в консоль название фильма "Пила 2".
 
-![test_token](https://raw.githubusercontent.com/itcosplay/images/main/test_tmdb_token.png)  
+![test_token.png](https://raw.githubusercontent.com/itcosplay/images/main/test_tmdb_token.png)  
 Запустить скрипт:
 ```
 python hello_api_TMDB.py
@@ -18,9 +18,9 @@ python hello_api_TMDB.py
 ## make_own_db.py
 Формирует в папке со скриптами файл `MyFilmDB.json` с информацией 1000 фильмах, взятой с [www.themoviedb.org](https://www.themoviedb.org/).  
 К основной информации относятся название фильма, жанр, бюджет, краткое описание, дата выхода и т.д.  
-По мере завершения работы скрипта в консоль будет напечатано соответвующее предупреждение.
+По мере завершения работы скрипта в консоль будет напечатано соответвующее предупреждение:
 
-![make_own_db](https://raw.githubusercontent.com/itcosplay/images/main/make_own_db.png)  
+![make_own_db.png](https://raw.githubusercontent.com/itcosplay/images/main/make_own_db.png)  
 Запустить скрипт:
 ```
 python make_own_db.py
@@ -37,7 +37,11 @@ python make_own_db.py
 - бюджет фильма
 
 По чем большим параметрам фильмы будут похожи, тем выше фильм отбразится при сортировке фильмов.
-Максимально похожий фильм будет напечатан первым, далее по убыванию.
+Максимально похожий фильм будет напечатан первым, далее по убыванию.  
+Например, мы хотим найти в нашей картотеке фильмы похожие на фильм «Ariel». Рузьтат на скриншоте ниже:
+
+![find_familiar.png](https://raw.githubusercontent.com/itcosplay/images/main/find_familiar.png)
+
 Запустить скрипт:
 ```
 python find_similar.py film_title
@@ -47,5 +51,7 @@ python find_similar.py film_title
 Ищет фильм по названию или части названия.
 Если название фильма совпадает, или часть названия, введенного пользователем, есть в одном из названий фильмов, то все совпадения будут выведенны в консоль.
 Поиск осуществляется 
+
+https://raw.githubusercontent.com/itcosplay/images/main/search.png
 
 
