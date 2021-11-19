@@ -30,3 +30,5 @@ if __name__ == '__main__':
     all_films = load_films(user_api_key, films_amount)
     with open(file='MyFilmDB.json', mode='w', encoding='utf-8') as my_file:
         json.dump(all_films, my_file)
+        
+    print('Информация о фильмах сохранена в файл MyFilmDB.json')
