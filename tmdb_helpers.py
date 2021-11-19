@@ -1,7 +1,10 @@
-import urllib.request
-import urllib.parse
 import json
-from getpass import getpass
+import urllib.error
+import urllib.parse
+import urllib.request
+
+from environs import Env
+
 
 def make_tmdb_api_request(method, api_key, extra_params=None):
     extra_params = extra_params or {}
@@ -11,21 +14,27 @@ def make_tmdb_api_request(method, api_key, extra_params=None):
         'language': 'ru',
     }
     params.update(extra_params)
-    return load_json_data_from_url(url, params)
 
-def load_json_data_from_url(base_url, url_params):
-    url = '%s?%s' % (base_url, urllib.parse.urlencode(url_params))
+    url = '%s?%s' % (url, urllib.parse.urlencode(params))
     response = urllib.request.urlopen(url).read().decode('utf-8')
+
     return json.loads(response)
 
+
 def get_user_api_key():
-    user_api_key = getpass('Enter your api key v3:')
+    env = Env()
+    env.read_env()
+
+    TMDB_TOKEN = env('TMDB_TOKEN')
+
     try:
-        make_tmdb_api_request(method='/movie/2', api_key = user_api_key)
-        return user_api_key
+        make_tmdb_api_request(method='/movie/2', api_key = TMDB_TOKEN)
+        return TMDB_TOKEN
+
     except urllib.error.HTTPError as err:
         if err.code == 401:
             return None
+            
         else:
             raise
 
