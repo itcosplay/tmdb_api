@@ -25,7 +25,7 @@ if __name__ == '__main__':
     if not user_api_key:
         print('Invalid api key')
         raise SystemExit
-    films_amount = 40
+    films_amount = 1000
     print('please, wait, this operation may take smth like 15-20 minutes')
     all_films = load_films(user_api_key, films_amount)
     with open(file='MyFilmDB.json', mode='w', encoding='utf-8') as my_file:
