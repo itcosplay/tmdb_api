@@ -1,7 +1,7 @@
 import json
 import os
 
-def load_data(path):
+def load_data(path='MyFilmDB.json'):
     if not os.path.exists(path):
         return None
     with open(path, mode='r', encoding='utf-8') as my_file:

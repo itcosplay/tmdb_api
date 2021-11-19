@@ -16,6 +16,7 @@ def make_tmdb_api_request(method, api_key, extra_params=None):
     params.update(extra_params)
 
     url = '%s?%s' % (url, urllib.parse.urlencode(params))
+    print(url)
     response = urllib.request.urlopen(url).read().decode('utf-8')
 
     return json.loads(response)
